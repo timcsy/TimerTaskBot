@@ -95,7 +95,14 @@ class ScheduleActor(pykka.ThreadingActor):
 			auto_transitions=False,
 			show_conditions=True,
     )
-		self.bot.send_text('Welcome to Scheduler,\ntype the following words -- \nadd: to add a task\ncancel: to cancel a task\nlist: list tasks\nrestart: to restart the scheduler\nfsm: to show the fsm picture')
+		self.bot.send_text('Welcome to Scheduler,\n' + 
+											 'type the following commands -- \n' + 
+											 'add: to add a task\n' + 
+											 'cancel: to cancel a task\n' + 
+											 'list: list tasks\n' + 
+											 'restart: to restart the scheduler\n' + 
+											 'fsm: to show the fsm picture\n' + 
+											 '(Note -- add / before command in the group)')
 		self.state = 'schedule'
 		self.machine.schedule()
 

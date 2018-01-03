@@ -39,7 +39,7 @@ class TelegramChatActor(pykka.ThreadingActor):
 		self.state = 'start'
 	
 	def update(self, update):
-		text = update.message.text
+		text = update.message.text.replace("/", "").lower()
 		if self.state == 'start':
 			self.schedule_actor = ScheduleActor.start(self)
 			self.state = 'schedule'
