@@ -42,8 +42,6 @@ class TelegramChatActor(pykka.ThreadingActor):
 			self.schedule_actor = ScheduleActor.start(self)
 			self.state = 'schedule'
 		elif self.state == 'schedule':
-			if text == 'fsm':
-				self.schedule_actor.proxy().draw().get()
 			self.schedule_actor.tell({'msg': text})
 
 	def send_text(self, message):
