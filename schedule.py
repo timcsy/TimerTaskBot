@@ -96,7 +96,7 @@ class ScheduleActor(pykka.ThreadingActor):
 			auto_transitions=False,
 			show_conditions=True,
     )
-		self.bot.send_text('Welcome to Scheduler,\ntype the following words,\nadd: to add a task\ncancel: to cancel a task\nlist: list tasks\nrestart: to restart the scheduler')
+		self.bot.send_text('Welcome to Scheduler,\ntype the following words -- \nadd: to add a task\ncancel: to cancel a task\nlist: list tasks\nrestart: to restart the scheduler\nfsm: to show the fsm picture')
 		self.state = 'schedule'
 
 	def on_receive(self, message):
@@ -104,7 +104,6 @@ class ScheduleActor(pykka.ThreadingActor):
 		if msg == 'fsm':
 			self.draw()
 			self.bot.send_photo(photo=open('img/fsm.png', 'rb'))
-			time.sleep(1)
 		if self.state == 'schedule':
 			if msg == 'add':
 				self.state = 'add'
@@ -121,7 +120,7 @@ class ScheduleActor(pykka.ThreadingActor):
 				self.bot.send_text('Please enter the task number: ')
 			elif msg == 'restart':
 				self.scheduler.clear()
-				self.bot.send_text('Welcome to Scheduler,\ntype the following words,\nadd: to add a task\ncancel: to cancel a task\nlist: list tasks\nrestart: to restart the scheduler')
+				self.bot.send_text('Welcome to Scheduler,\ntype the following words -- \nadd: to add a task\ncancel: to cancel a task\nlist: list tasks\nrestart: to restart the scheduler\nfsm: to show the fsm picture')
 		elif self.state == 'add':
 			interval = int(msg)
 			self.scheduler.add(Task(self.bot, interval))
