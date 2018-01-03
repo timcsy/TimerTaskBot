@@ -1,13 +1,11 @@
-# TOC Project 2017
-
-Template Code for TOC Project 2017
-
-A telegram bot based on a finite state machine
+# TimerBot
+這是一個專門計時的聊天機器人
 
 ## Setup
 
 ### Prerequisite
 * Python 3
+* graphviz
 
 #### Install Dependency
 ```sh
@@ -18,8 +16,12 @@ pip install -r requirements.txt
     * [Setup pygraphviz on Ubuntu](http://www.jianshu.com/p/a3da7ecc5303)
 
 ### Secret Data
-
-`API_TOKEN` and `WEBHOOK_URL` in app.py **MUST** be set to proper values.
+建立一個叫做 config.py 的檔案在主目錄下，內容為
+```
+TELEGRAM_API_TOKEN = 'YOUR_TELEGRAM_API_TOKEN'
+TELEGRAM_WEBHOOK_URL = 'YOUR_TELEGRAM_WEBHOOK_URL'
+```	
+`TELEGRAM_API_TOKEN` and `TELEGRAM_WEBHOOK_URL` in .py **MUST** be set to proper values.
 Otherwise, you might not be able to run your code.
 
 ### Run Locally
@@ -33,29 +35,23 @@ ngrok http 5000
 
 After that, `ngrok` would generate a https URL.
 
-You should set `WEBHOOK_URL` (in app.py) to `your-https-URL/hook`.
+You should set `TELEGRAM_WEBHOOK_URL` (in config.py) to `https://your-https-URL/hook`.
 
 #### Run the sever
-
 ```sh
 python3 app.py
 ```
 
+### Run on my Server
+
+Find @TimerTaskBot on the Telegram and you can run it if my server is opened. I have a server that can run for a long time.
+
 ## Finite State Machine
-![fsm](./img/show-fsm.png)
+![fsm](./img/fsm.png)
 
 ## Usage
-The initial state is set to `user`.
-
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
-
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
-
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
 
 
 ## Author
-[Lee-W](https://github.com/Lee-W)
+[張頌宇](https://github.com/timcsy)
+成大資訊系108級 F74046462

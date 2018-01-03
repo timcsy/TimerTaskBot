@@ -37,15 +37,15 @@ class TelegramChatActor(pykka.ThreadingActor):
 		super(TelegramChatActor, self).__init__()
 		self.tele_bot = tele_bot
 		self.id = id
-		self.schedule_actor = ScheduleActor.start(self)
+		self.state = 'start'
 	
 	def update(self, update):
 		text = update.message.text.replace("/", "").lower()
-		# if self.state == 'start':
-			
-		# 	self.state = 'schedule'
-		# elif self.state == 'schedule':
-		self.schedule_actor.tell({'msg': text})
+		if self.state == 'start':
+			self.schedule_actor = ScheduleActor.start(self)
+			self.state = 'schedule'
+		elif self.state == 'schedule':
+			self.schedule_actor.tell({'msg': text})
 
 	def send_text(self, message):
 		self.tele_bot.send_text(self.id, message)
