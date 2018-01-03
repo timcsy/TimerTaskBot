@@ -107,7 +107,6 @@ class ScheduleActor(pykka.ThreadingActor):
 		self.machine.schedule()
 
 	def on_receive(self, message):
-		print(msg)
 		msg = message['msg']
 		if msg == 'fsm':
 			self.draw()

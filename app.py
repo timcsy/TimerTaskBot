@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route('/hook', methods=['POST'])
 def webhook_handler():
+    print('enter')
 	update = telegram.Update.de_json(request.get_json(force=True), bot)
 	tele_bot.update(update)
 	return 'ok'
