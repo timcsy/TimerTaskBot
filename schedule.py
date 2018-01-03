@@ -120,7 +120,9 @@ class ScheduleActor(pykka.ThreadingActor):
 				self.bot.send_text('Restart')
 		elif self.state == 'add':
 			interval = int(msg)
+			print('enter')
 			self.scheduler.add(Task(self.bot, interval))
+			print('exit')
 			self.state = 'schedule'
 		elif self.state == 'cancel':
 			task_num = int(msg)
