@@ -15,18 +15,24 @@
 玩法3：工作時間規劃，打程式時適時提醒你準備星席、該休息了
 
 ## 技術
-為了達到可以同步處理不同使用者的訊息，我使用了Actor Model
+因為在使用webhook機制時會遇到一個問題，就是每次都要從頭開始，而且當遇到不同使用者的時候問題更大
 
-在python中使用pykka這個library
+為了達到可以非同步處理不同使用者的訊息，我使用了[Actor Model](https://en.wikipedia.org/wiki/Actor_model)的概念
+
+在python中對應到的是 [Pykka](https://www.pykka.org/en/latest/) 這個library
 
 然後我也自己用threading.Timer搭配heapq實做了一個Scheduler
 
 此外可以為不同使用者顯示當前的fsm
 
 ## 未來展望
+可多重輸入(不再是FSM而是Pushdown Automata或是Turing Mashine的機制)
+
+表單模組的建立
+
 結合資料庫 MongoDB
 
-可以結合日歷設定行程
+可以結合Google日歷API設定行程
 
 安排行程建議
 
@@ -35,6 +41,10 @@
 檢討行程規劃
 
 自訂排班方式
+
+如果有興趣歡迎關注 https://github.com/timcsy/OPScheduleBot，將會推出Telegram、Line、Messenger版本
+
+Telegram版本就是叫做 @OPScheduleBot
 
 ## Setup
 
