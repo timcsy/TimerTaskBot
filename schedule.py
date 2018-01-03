@@ -53,7 +53,7 @@ class Scheduler:
 		self.next()
 	
 	def next(self):
-		if self.thread is None:
+		if not self.thread == None:
 			self.thread.cancel()
 		if len(self.queue) > 0:
 			now = time.time()
