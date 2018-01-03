@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/hook', methods=['POST'])
 def webhook_handler():
-    print('enter')
+	print('enter')
 	update = telegram.Update.de_json(request.get_json(force=True), bot)
 	tele_bot.update(update)
 	return 'ok'
@@ -14,5 +14,5 @@ def webhook_handler():
 if __name__ == "__main__":
 	bot = telegram.Bot(token=TELEGRAM_API_TOKEN)
 	tele_bot = TelegramBot.start(bot).proxy()
-	
+
 	app.run()
