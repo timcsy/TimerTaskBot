@@ -64,7 +64,7 @@ class Scheduler:
 			self.thread.start()
 
 
-class ScheduleActor(pykka.ThreadingActor, GraphMachine):
+class ScheduleActor(pykka.ThreadingActor):
 	def __init__(self, bot):
 		super(ScheduleActor, self).__init__()
 		self.bot = bot
