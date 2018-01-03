@@ -27,6 +27,9 @@ class TelegramBot(pykka.ThreadingActor):
 	
 	def send_text(self, chat_id, message):
 		self.bot.send_message(chat_id, message)
+	
+	def send_photo(self, chat_id, photo):
+		self.bot.send_photo(chat_id, photo)
 
 
 class TelegramChatActor(pykka.ThreadingActor):
@@ -46,3 +49,6 @@ class TelegramChatActor(pykka.ThreadingActor):
 
 	def send_text(self, message):
 		self.tele_bot.send_text(self.id, message)
+
+	def send_photo(self, photo):
+		self.tele_bot.send_photo(self.id, photo)
