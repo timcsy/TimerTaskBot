@@ -97,7 +97,7 @@ class ScheduleActor(pykka.ThreadingActor):
 			show_conditions=True,
     )
 		self.bot.send_text('Welcome to Scheduler,\ntype the following words,\nadd: to add a task\ncancel: to cancel a task\nlist: list tasks')
-		self.state = 'start'
+		self.state = 'schedule'
 
 	def on_receive(self, message):
 		msg = message['msg']
