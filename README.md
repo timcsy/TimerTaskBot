@@ -9,6 +9,14 @@
 玩法2：提醒功能，當跟朋友聊天聊太久時會提醒你
 玩法3：工作時間規劃，打程式時適時提醒你準備星席、該休息了
 
+## 技術
+為了達到可以同步處理不同使用者的訊息，我使用了Actor Model
+在python中使用pykka這個library
+
+然後我也自己用threading.Timer搭配heapq實做了一個Scheduler
+
+此外可以為不同使用者顯示當前的fsm
+
 ## Setup
 
 ### Prerequisite
