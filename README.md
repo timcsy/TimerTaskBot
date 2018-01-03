@@ -85,11 +85,15 @@ Find @TimerTaskBot on the Telegram and you can run it if my server is opened. I 
 ![fsm](./img/fsm.png)
 
 ## Usage
+![](./images/2018-01-03-22-13-53.png)
+
 add: to add a task
 
 enter interval (second):
 
-10 (for example)
+5 (for example)
+
+![](./images/2018-01-03-22-15-10.png)
 
 cancel: to cancel a task
 
@@ -97,14 +101,20 @@ Please enter the task number:
 
 0 (for example, enter the task's id)
 
+![](./images/2018-01-03-22-17-14.png)
 
 list: list tasks
+
+![](./images/2018-01-03-22-16-09.png)
 
 
 restart: to restart the scheduler
 
+![](./images/2018-01-03-22-17-36.png)
 
 fsm: to show the fsm picture
+
+![](./images/2018-01-03-22-18-00.png)
 
 ## Author
 [張頌宇](https://github.com/timcsy)
