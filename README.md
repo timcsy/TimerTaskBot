@@ -86,16 +86,23 @@ Find @TimerTaskBot on the Telegram and you can run it if my server is opened. I 
 
 ## Usage
 add: to add a task
+
 enter interval (second):
+
 10 (for example)
 
 cancel: to cancel a task
+
 Please enter the task number:
+
 0 (for example, enter the task's id)
+
 
 list: list tasks
 
+
 restart: to restart the scheduler
+
 
 fsm: to show the fsm picture
 
