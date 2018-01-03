@@ -76,9 +76,8 @@ class ScheduleActor(pykka.ThreadingActor):
 				'add',
 				'interval',
 				'cancel',
-				'num'
+				'num',
 				'list',
-				'restart'
 			],
 			transitions=[
 				['schedule', 'instruction' , 'schedule'],
