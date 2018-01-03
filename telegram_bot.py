@@ -1,6 +1,5 @@
 from config import *
 import pykka
-import telegram
 import sys
 from schedule import ScheduleActor
 
