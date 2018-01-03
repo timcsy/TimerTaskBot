@@ -104,6 +104,7 @@ class ScheduleActor(pykka.ThreadingActor):
 		if msg == 'fsm':
 			self.draw()
 			self.bot.send_photo(photo=open('img/fsm.png', 'rb'))
+			time.sleep(1)
 		if self.state == 'schedule':
 			if msg == 'add':
 				self.state = 'add'
