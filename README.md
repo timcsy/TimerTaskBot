@@ -42,7 +42,9 @@
 
 自訂排班方式
 
-如果有興趣歡迎關注 [](https://github.com/timcsy/OPScheduleBot)，將會推出Telegram、Line、Messenger版本
+如果有興趣歡迎關注 https://github.com/timcsy/OPScheduleBot
+
+將會推出Telegram、Line、Messenger版本
 
 Telegram版本就是叫做 @OPScheduleBot
 
