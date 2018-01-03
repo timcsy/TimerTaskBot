@@ -95,7 +95,6 @@ class ScheduleActor(pykka.ThreadingActor):
 			auto_transitions=False,
 			show_conditions=True,
     )
-		print('schedule')
 		self.bot.send_text('Welcome to Scheduler,\n' + 
 											 'type the following commands -- \n' + 
 											 'add: to add a task\n' + 
