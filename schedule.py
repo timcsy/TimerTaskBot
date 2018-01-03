@@ -128,6 +128,7 @@ class ScheduleActor(pykka.ThreadingActor):
 				self.machine.restart()
 				self.scheduler.clear()
 				self.bot.send_text('Welcome to Scheduler,\ntype the following words -- \nadd: to add a task\ncancel: to cancel a task\nlist: list tasks\nrestart: to restart the scheduler\nfsm: to show the fsm picture')
+				self.machine.schedule()
 		elif self.state == 'add':
 			self.machine.input()
 			interval = int(msg)
