@@ -11,7 +11,7 @@ class Task:
 		self.canceled = False
 		
 	def start(self):
-		self.bot.send_text("Task " + str(self.interval) + ' expired')
+		self.bot.send_text("Task " + str(self.interval) + ' seconds expired')
 
 	def next_time(self):
 		return self.interval
